@@ -21,6 +21,12 @@
   "homepage": "https://github.com/geekhall/webpack-demo#readme",
   "devDependencies": {
     "css-loader": "^6.7.1",
-    "style-loader": "^3.3.1"
+    "mini-css-extract-plugin": "^2.6.0",
+    "sass": "^1.50.1",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.3",
+    "webpack": "^5.72.0"
   }
 }
