@@ -32,3 +32,50 @@ type `webpack` in the command line , then you will get output file in `./dist` d
 webpack
 ```
 
+## problem
+
+### 1. Webpack has been initialized using a configuration object that does not match the API schema.
+
+webpack.config.js
+```js
+const path = require('path')
+module.exports = {
+  // JavaScript entry file
+  entry: './main.js',
+  output: {
+    // bundle all the source file into a bundle.js file.
+    filename: 'bundle.js',
+    // output directory
+    path: path.resolve(__dirname, './dist')
+  },
+  module:{
+    rules: {
+      // use regex to matching the css file
+      // to be converted by the loader.
+      test: /\.css$/,
+      use: ['style-loader', 'css-loader?minimize']
+    }
+  }
+}
+
+```
+
+output :
+
+```
+Invalid configuration object. Webpack has been initialized using a configuration object that does not match the API schema.
+```
+
+Reason:
+
+rules
+```js
+module:{
+    rules: [
+      {
+        // use regex to matching the css file
+        // to be converted by the loader.
+        test: /\.css$/,use: ['style-loader', 'css-loader']
+      }
+    ]
+```
